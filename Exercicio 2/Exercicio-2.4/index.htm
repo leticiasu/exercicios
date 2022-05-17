@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for="idAltura">Altura</label><br>
+        <input type="number" id="idAltura" name="nmAltura" step="0.01">
+
+   <br><br>
+
+        <label for="idPeso">Peso</label><br>
+        <input type="number" id="idPeso" name="nmPeso" step="0.01">
+
+        <br><br>
+
+        <output id="idOut">IMC:</output>
+
+   <br><br>
+
+            <input type="button" value="calcular" onclick="calcular()">
+
+   </form>
+
+    <script>
+        function calcular() {
+            var altura = Number(document.getElementById("idAltura").value)
+            var peso = Number(document.getElementById("idPeso").value)
+            
+            var imc = (peso/(altura * altura)).toFixed(2)
+
+            var mensagem
+           
+
+            if (imc >= 16 && imc <= 16.9 ) {
+                mensagem = "Muito abaixo do peso"
+            }
+
+            if (imc > 16.9 && imc <= 18.4 ) {
+                mensagem = "Abaixo do peso"
+            }
+
+            if (imc > 18.4 && imc <= 24.9 ) {
+                mensagem = "Peso normal"
+            }
+
+            if (imc > 24.9 && imc <= 29.9 ) {
+                mensagem = "Acima do peso"
+            }
+
+
+            if (imc > 29.9 && imc <= 34.9 ) {
+                mensagem = "Obesidade grauI"
+            }
+
+            if (imc > 34.9 && imc <= 40 ) {
+                mensagem = "Obesidade grauII"
+            }
+
+            if (imc > 40 ) {
+                mensagem = "Obesidade grauIII"
+            }
+            document.getElementById("idOut").value = "IMC: " + imc + "- " + mensagem
+    }
+
+
+    </script>
+   
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Oredem decrescente</legend>
+        <form action="">
+            <label for="idNum1">Primeiro número</label><br>
+            <input type="number" id="idNum1" name="nmNum1" step="0.01">
+            <br><br>
+            <label for="idNum2">Segundo número</label><br>
+            <input type="number" id="idNum2" name="nmNum2" step="0.01">
+            <br><br>
+            <label for="idNum3">Terceiro número</label><br>
+            <input type="number" id="idNum3" name="nmNum3" step="0.01">
+            <br><br>
+            <output id="idOut"></output>
+            <br><br>
+            <input type="button" value="Enviar" onclick="verificar()">
+        </form>
+    </fieldset>
+    <script>
+        function verificar() {
+            let num1 = Number(document.getElementById("idNum1").value)
+            let num2 = Number(document.getElementById("idNum2").value)
+            let num3 = Number(document.getElementById("idNum3").value)
+
+            let out = document.getElementById("idOut")
+
+            if (num1 < num2 && num2 < num3) {
+                out.value = "Ordem Decrescente: " + num3 + num2 + num1
+            }
+            if (num2 < num1 && num1 < num3) {
+                out.value = "Ordem Decrescente: " + num3 + num1 + num2
+            }
+            if (num3 < num1 && num1 < num2) {
+                out.value = "Ordem Decrescente: " + num2 + num1 + num3
+            }
+            if (num1 < num3 && num3 < num2) {
+                out.value = "Ordem Decrescente: " + num2 + num3 + num1
+            }
+            if (num2 < num3 && num3 < num1) {
+                out.value = "Ordem Decrescente: " + num1 + num3 + num2
+            }
+            if (num3 < num2 && num2 < num1) {
+                out.value = "Ordem Decrescente: " + num1 + num2 + num3
+            }
+        }
+    </script>
+    
+</body>
+</html>

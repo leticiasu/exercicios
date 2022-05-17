@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urna Eletrônica</title>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <legend>Urna Eletrônica</legend>
+            <figure>
+                <img src="assets/candidato1.jfif" alt="Candidato 1"><br>
+                João Augusto                    
+
+                <br><br>
+
+                <img src="assets/candidato2.jfif" alt="Candidato 2"><br>
+                Bianca Silva                    
+
+                <br><br>
+
+                <img src="assets/candidato3.jfif" alt="Candidato 3"><br>
+                Pedro Schimidt                   
+
+            </figure>
+          
+            <input list="idCandidatos">
+            <datalist id="idCandidatos">
+                <option value="215">João Augusto <br></option>
+                <option value="320">Bianca Silva <br></option>
+                <option value="549">Pedro Schimidt <br></option>
+            </datalist>
+
+            <br><br>
+
+            <input type="button" value="Confirmar" onclick="pegarNome()">
+            <button type="reset">Cancelar</button>
+            <button type="submit">Branco</button>
+        </fieldset>
+    </form>
+
+    <script>
+        
+        var votos
+        var itemSelected
+        var candidatos
+        function pegarNome(){
+
+        itemSelected = document.getElementById("idCandidatos")
+        votos = itemSelected.value
+        console.log("Candidato: " + itemSelected)
+        document.getElementById("idVotos")
+        
+        }
+
+    </script>
+    
+</body>
+</html>

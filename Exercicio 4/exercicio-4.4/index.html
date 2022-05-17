@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Está entre 30 a 90?</legend>
+            <form action="">
+                <label for="idNumero">Número</label><br>
+                <input type="number" id="idNumero" name="nmNumero" step="0.01">
+                <br><br>
+                <output id="idOut"></output>
+                <br><br>
+                <input type="button" value="Enviar" onclick="conferir()">
+            </form>
+    </fieldset>
+            <script>
+                function conferir() {
+                    var numero = Number(document.getElementById("idNumero").value)
+                    var out = document.getElementById("idOut")
+
+                    if (numero < 30) {
+                        out.value = "O número não está no intervalo de 30 a 90"
+                    }
+                    if (numero > 90) {
+                        out.value = "O número não está no intervalo de 30 a 90"
+                    }
+                  
+                    if (numero >= 30 && numero <= 90) {
+                        out.value = "O número está no intervalo de 30 a 90"
+                    }
+                   
+                
+            }
+            </script>
+</body>
+</html>

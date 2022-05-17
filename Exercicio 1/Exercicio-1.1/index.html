@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <legend>Escola XTPO</legend>
+                <label for="idNome">Nome Completo:</label><br>
+                <input type="text" id="idNome" name="nmNome" placeholder="Nome Completo">
+
+                <br><br>
+
+                <label for="idDataNasc">Data de Nascimento:</label><br>
+                <input type="date" id="idDataNasc" name="nmDataNasc">
+
+                <br><br>
+
+                <label for="idEndereco">Endereço:</label><br>
+                <input type="number" id="idEndereco" name="nmNumero" max="90000" min="1" placeholder="Num." required>
+                <input type="text" id="idBairro" name="nmBairro" placeholder="Bairro" required>
+                <input type="text" id="idCidade" name="nmCidade" placeholder="Cidade" required>
+                <input type="text" id="idEstado" name="nmEstado" placeholder="Estado" size="3" required>
+
+                <br><br>
+
+                <label for="idMae">Nome da Mãe:</label><br>
+                <input type="text" id="idMae" name="nmMae" placeholder="Nome Completo"><br><br>
+
+                <label for="idPai">Nome do Pai:</label><br>
+                <input type="text" id="idPai" name="nmPai" placeholder="Nome Completo"><br><br>
+
+                <label for="idResponsavel">Nome do Responsável:</label><br>
+                <input type="text" id="idResponsavel" name="nmResponsavel" placeholder="Nome Completo">
+
+                <br><br>
+
+                <label for="idEmail">E-mail:</label><br>
+                <input type="email" id="idEmail" name="nmEmail" placeholder="Insira seu Email" required>
+
+                <br><br>
+
+                <label for="idSerie">Série:</label><br>
+                <select name="nmSerie" id="idSerie">
+                <option value="6fundamentel">6° Fundamental</option>
+                <option value="7fundamental">7° Fundamental</option>
+                <option value="8fundamental">8° Fundamental</option>
+                <option value="9fundamental">9° Fundamental</option>
+                <option value="1medio">1° Médio</option>
+                <option value="2medio">2° Médio</option>
+                <option value="3medio">3° Médio</option>
+            </select>
+
+            <br><br>
+
+            <input type="radio" name="nmGenero" id="idFem" value="F">
+            <label for="idFem">Feminino</label><br>
+
+            <input type="radio" name="nmGenero" id="idMas" value="M">
+            <label for="idMas">Masculino</label><br>
+
+            <input type="radio" name="nmGenero" id="idLgbt" value="L">
+            <label for="idLgbt">Lgbt</label><br>
+
+            <br><br>
+
+            <input type ="button" value="Enviar" onClick =" pegarNome() " >
+            <input type ="reset" id="idReset">
+
+
+              <script>
+                var nome
+                var DataNasc
+                var Mae
+                var Pai
+                var Responsavel
+                var endereco
+                var bairro
+                var cidade
+                var estado
+                var email
+                var serie
+                var itemSelected
+                var fem
+                var mas 
+                var lgbt               
+
+                function pegarNome(){
+                    
+                    nome = document.getElementById("idNome").value
+                    console.log("Nome: " + Nome)
+
+                    DataNasc = document.getElementById("idDataNasc").value
+                    console.log("Data de Nascimento: " + DataNasc)
+
+                    endereco = document.getElementById("idEndereco").value
+                    console.log("Numero da Residência: " + endereco)
+
+                    bairro = document.getElementById("idBairro").value
+                    console.log("Bairro: " + bairro)
+
+                    cidade = document.getElementById("idCidade").value
+                    console.log("Cidade: " + cidade)
+
+                    estado = document.getElementById("idEstado").value
+                    console.log("Estado: " + estado)
+
+                    Mae = document.getElementById("idMae").value
+                    console.log("Nome da Mãe: " + Mae)
+
+                    pai = document.getElementById("idPai").value
+                    console.log("Nome da Pai: " + pai)
+
+                    responsavel = document.getElementById("idResponsavel").value
+                    console.log("Nome do Responsável: " + responsavel)
+
+                    email = document.getElementById("idEmail").value
+                    console.log("E-mail: " + email)
+
+                    itemSelected = document.getElementById("idSerie")
+                    serie = itemSelected.value
+                    console.log("Série: " + serie);
+
+                    fem = document.getElementById("idFem").checked
+                    mas = document.getElementById("idMas").checked
+                    lgbt = document.getElementById("idLgbt").checked
+                    console.log("Feminino: " + fem + "Masculino: " + mas + "Lgbt: " + lgbt)
+                    
+                } 
+                    
+                
+
+              </script>
+
+
+        </fieldset>
+    </form>
+</body>
+</html>

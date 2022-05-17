@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Temperatura</legend>
+        <form action="">
+
+            <label for="idDia1">Primeira Temperatura:</label><br>
+            <input type="number" id="Dia1" name="nmDia1">
+
+            <br><br>
+
+            <label for="idDia2">Segunda Temperatura:</label><br>
+            <input type="number" id="Dia2" name="nmDia2">
+
+            <br><br>
+
+            <label for="idDia3">Terceira Temperatura:</label><br>
+            <input type="number" id="Dia3" name="nmDia3">
+
+            <br><br>
+
+            <label for="idDia4">Temperatura de Hoje:</label><br>
+            <input type="number" id="Dia4" name="nmDia4">
+
+            <br><br>
+
+            <output id="idOut">Média:</output>
+
+            <br><br>
+
+            <input type="button" value="Calcular" onclick="calcular()">
+        </form>
+    </fieldset>
+
+    <script>
+        function calcular() {
+            var dia1 = Number(document.getElementById("idDia1").value)
+            var dia2 = Number(document.getElementById("idDia2").value)
+            var dia3 = Number(document.getElementById("idDia3").value)
+            var dia4 = Number(document.getElementById("idDia4").value)
+            var media = (dia1 + dia2 + dia3) / 3
+            var mensagem
+            
+
+            if (dia4  > media ) {
+                mensagem = "Temperatura de Hoje: " + dia4 + "Acima da média " + media
+            } else {
+                if (dia4 < media ) {
+               mensagem = "Temperatura de Hoje: " + dia4 + "Menor que a média " + media 
+            } else {
+                mensagem = "Temperatura de Hoje: " + dia4 + "Esta na média " + media 
+            }
+        }
+        document.getElementById("idOut").value = mensagem
+    }
+        
+    </script>
+</body>
+</html>

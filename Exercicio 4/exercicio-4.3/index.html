@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Maior, menor ou igual a 20?</legend>
+        <form action="">
+            <label for="idNumero">Numero</label><br>
+            <input type="number" id="idNumero" name="nmNome" step="0.01">
+            <br><br>
+            <output id="idOut"></output>
+            <br><br>
+            <input type="button" value="Enviar" onclick="conferir()">
+        </form>
+    </fieldset>
+
+        <script>
+            function conferir() {
+                var numero = Number(document.getElementById("idNumero").value)
+                var out = document.getElementById("idOut")
+
+                if (numero > 20) {
+                    out.value = "O número " + numero + " é maior que 20"
+                }
+                if (numero == 20) {
+                    out.value = "O número " + numero + " é igual a 20"
+                }
+                if (numero < 20) {
+                    out.value = "O número " + numero + " é menor que 20"
+                }
+
+            }
+        </script>
+</body>
+</html>

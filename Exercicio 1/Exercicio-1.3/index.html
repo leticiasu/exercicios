@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empresa XYZ</title>
+</head>
+<body>
+    <fieldset>
+        <legend> Empresa XYZ</legend>
+        <form action="">
+            <input type="text" id="idNome" name="nmNome" placeholder="Nome Completo" required>
+
+            <br><br>
+
+            <input type="email" id="idEmail" name="nmEmail" placeholder="Insira seu Email" required>
+
+            <br><br>
+
+            <input type="text" id="idEmpresa" name="nmEmpresa" placeholder="Empresa" required>
+
+            <br><br>
+
+            <input type="number" id="idTel" name="nmTel" placeholder="Telefone" required>
+
+            <br><br>
+
+            <input list="idMotivo" placeholder="Motivo">
+            <datalist id="idMotivo">
+                <option value="comercial">Comercial</option>
+                <option value="reclamacao">Reclamação</option>
+                <option value="sugestao">Sugestão</option>
+                <option value="cancelamentodaassinatura">Cancelamento da Assinatura</option>
+                <option value="divida">Duvidas</option>
+                <option value="outro">Outro</option>
+            </datalist>
+
+            <br><br>
+
+            <textarea name="nmComentario" id="idComentario" cols="30" rows="10" placeholder="Comentário"></textarea>
+
+            <br><br>
+
+            <button type="button" onclick="pegarnome()">Enviar</button>
+        </form>
+    </fieldset>
+    <script>
+        var nome
+        var email
+        var empresa
+        var telefone
+        var motivo
+        function pegarnome() {
+
+            nome = document.getElementById("idNome").value
+                    console.log("Nome: " + nome)
+
+            email = document.getElementById("idEmail").value
+                    console.log("Email: " + email)
+
+            empresa = document.getElementById("idEmpresa").value
+                    console.log("Empresa: " + empresa)
+
+            telefone = document.getElementById("idTel").value
+                    console.log("Telefone: " + telefone)
+
+            motivo = document.getElementById("idMotivo").
+                    console.log("Motivo: " + motivo)
+            
+        }
+    </script>
+</body>
+</html>

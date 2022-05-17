@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+    <label for="idText">Texto:</label><br>
+    <input type="text" id="idText" name="nmText">
+    <br><br>
+
+    <label for="idNum2">Texto 2</label><br>
+    <input type="text" name="idNum2" id="idNum2">
+
+    <br><br>
+
+    <button type="button" onclick="pegarDados()">Copiar</button>
+</form>
+
+    <script>
+        function pegarDados(){
+            var text = document.getElementById("idText").value
+            document.getElementById("idNum2").value = text
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Calculadora</legend>
+        <form action="">
+            <label for="idNum1">Primeiro Numero</label><br>
+            <input type="number" id="idNum1" name="nmNum1" step="0.01">
+            <br><br>
+            <label for="idOperador">Operador</label><br>
+            <input type="text" id="idOperador" name="nmOperador">
+            <br><br>
+            <label for="idNum2">Segundo Numero</label><br>
+            <input type="number" id="idNum2" name="nmNum2" step="0.01">
+            <br><br>
+            <output id="idOut"></output>
+            <br><br>
+            <input type="button" value="Calcular" onclick="calcular()">
+
+        </form>
+    </fieldset>
+    <script>
+        function calcular()
+            var num1 = Number(document.getElementById("idNum1").value)
+            let operador = document.getElementById("idOperador").value
+            let num2 = Number(document.getElementById("idNum2").value)
+            let out = document.getElementById("idOut")
+
+            var adicao = num1 + num2
+
+       if (operador == ) {
+           
+       }
+    </script>
+</body>
+</html>
