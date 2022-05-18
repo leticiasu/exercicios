@@ -26,7 +26,8 @@
 
             <br><br>
 
-            <input list="idMotivo" placeholder="Motivo">
+            <label for="Motivos">Motivo:</label><br>
+            <input list="idMotivo" id="idMotivos" placeholder="Motivo">
             <datalist id="idMotivo">
                 <option value="comercial">Comercial</option>
                 <option value="reclamacao">Reclamação</option>
@@ -65,7 +66,7 @@
             telefone = document.getElementById("idTel").value
                     console.log("Telefone: " + telefone)
 
-            motivo = document.getElementById("idMotivo").
+            motivo = document.getElementById("idMotivos").value
                     console.log("Motivo: " + motivo)
             
         }
