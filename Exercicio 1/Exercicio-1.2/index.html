@@ -25,12 +25,13 @@
                 Pedro Schimidt                   
 
             </figure>
-          
-            <input list="idCandidatos" name="nmCandidatos">
-            <datalist id="idCandidatos">
-                <option value="215" id="idVoto">João Augusto <br></option>
-                <option value="320" id="idVoto">Bianca Silva <br></option>
-                <option value="549" id="idVoto">Pedro Schimidt <br></option>
+
+          <label for="idCandidatos">Voto:</label><br>
+            <input list="idVoto" id="idCandidatos" name="nmCandidatos" placeholder="Número do Candidato">
+            <datalist id="idVoto">
+                <option value="215">João Augusto <br></option>
+                <option value="320">Bianca Silva <br></option>
+                <option value="549">Pedro Schimidt <br></option>
             </datalist>
 
             <br><br>
@@ -42,16 +43,11 @@
     </form>
 
     <script>
-        
-        var voto
-        var itemSelected
-        var candidatos
-        function pegarNome(){
 
-        itemSelected = document.getElementById("idVoto")
-        voto = itemSelected.value
-        console.log("Candidato: " + itemSelected)
-        document.getElementById("idVoto")
+        function pegarNome(){
+            var voto = document.getElementById("idCandidatos").value
+            console.log("Candidato: " + voto);
+      
         
         }
 
