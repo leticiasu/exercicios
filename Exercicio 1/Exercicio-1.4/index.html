@@ -19,9 +19,9 @@
             <label for="idParcialmente">Parcialmente atendida</label><br>
 
             <input type="checkbox" id="idTotalmente" name="nmTotalmente" value="totalmente">
-            <label for="idTotalmente">Totlamente atendida</label><br>
+            <label for="idTotalmente">Totalmente atendida</label><br>
 
-        <p>Qual nota voce daria para o atendimento?</p>
+        <p>Qual nota você daria para o atendimento?</p>
 
         <input type="checkbox" id="idPessimo" name="nmPessimo" value="Pessimo">
         <label for="idPessimo">Péssimo</label><br>
@@ -38,7 +38,7 @@
         <input type="checkbox" id="idExcelente" name="nmExcelente" value="Excelente">
         <label for="idExcelente">Excelente</label><br>
 
-        <p>Como voc~e classificaria o comportamento do atendente?</p>
+        <p>Como você classificaria o comportamento do atendente?</p>
 
         <input type="checkbox" id="idIndelicado" name="nmIndelicado" value="Indelicado">
         <label for="idIndelicado">Indelicado</label><br>
@@ -53,7 +53,7 @@
         <label for="idEducado">Educado</label><br>
 
         <input type="checkbox" id="idMuitoedu" name="nmMuitoedu" value="Muitoedu">
-        <label for="idMuitoed">Muito Educado</label><br>
+        <label for="idMuitoedu">Muito Educado</label><br>
 
         <br><br>
 
@@ -77,10 +77,46 @@
 
         <input type="radio" id="idLgbt" name="nmGenero" value="L">
         <label for="idLgbt">Lgbt</label><br>
-
-
+        <br>
+        <input type="button" value="Enviar" onclick="pegaropcoes()">
 
     </form>
     </fieldset>
+    <script>
+        function pegaropcoes() {
+            let op1Atendimento = document.getElementById("idNao").checked
+            let op2Atendimento = document.getElementById("idParcialmente").checked
+            let op3Atendimento = document.getElementById("idTotalmente").checked
+
+            console.log("Foi atendido" + " Op1: " + op1Atendimento + " Op2: " + op2Atendimento + " Op3: " + op3Atendimento)
+
+            let op1Nota = document.getElementById("idPessimo").checked
+            let op2Nota = document.getElementById("idRuim").checked
+            let op3Nota = document.getElementById("idAceitavel").checked
+            let op4Nota = document.getElementById("idBom").checked
+            let op5Nota = document.getElementById("idExcelente").checked
+
+            console.log( "Nota para o atendimento" + " Op1: " + op1Nota + " Op2: " + op2Nota + " Op3: " + op3Nota + " Op4: " + op4Nota + " Op5: " + op5Nota)
+
+            let op1Comportamento = document.getElementById("idIndelicado").checked
+            let op2Comportamento = document.getElementById("idMalhumorado").checked
+            let op3Comportamento = document.getElementById("idNeutro").checked
+            let op4Comportamento = document.getElementById("idEducado").checked
+            let op5Comportamento = document.getElementById("idMuitoedu").checked
+
+            console.log("Comportamento do atendente" + " Op1: " + op1Comportamento + " Op2: " + op2Comportamento + " Op3: " + op3Comportamento + " Op4: " + op4Comportamento + " Op5: " + op5Comportamento)
+
+            let idade = document.getElementById("idIdade").value
+                console.log("Idade: " + idade);
+
+                let feminino = document.getElementById("idFem").checked
+                let masculino = document.getElementById("idMas").checked
+                let lgbt = document.getElementById("idLgbt").checked
+                    console.log("Feminino:" + feminino + " Masculino:" + masculino + " Lgbt: " + lgbt);
+
+        }
+
+
+    </script>
 </body>
 </html>

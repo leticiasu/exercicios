@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <output id="idOut"></output>
+    <p id="idParagrafo"></p>
+<script>
+    var contador = 15
+    var textoContador = ""
+    var out = document.getElementById("idOut")
+
+    while (contador > 2) {
+        textoContador = textoContador + contador + " "
+
+        contador--
+    }
+
+    out.value = "Início " + textoContador + " Fim"
+
+    for (let index = 0; index < 16; index--) {
+        console.log("For " + index);
+        var paragrafo = document.getElementById("idParagrafo")
+
+        paragrafo.value = "Ínicio " + index
+    }
+
+</script>
+</body>
+</html>
+        

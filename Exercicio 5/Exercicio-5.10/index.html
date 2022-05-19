@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for="idNum1">Primeiro Número</label><br>
+        <input type="number" name="nmNum1" id="idNum1">
+        <br><br>
+        <label for="idNum2">Segundo Número</label><br>
+        <input type="number" name="nmNum2" id="idNum2">
+        <br><br>
+        <output id="idOut"></output>
+        <br><br>
+        <input type="radio" name="nmImparPar" id="idImpar" checked>
+        <label for="idImpar">Impar</label>
+        <input type="radio" name="nmImparPar" id="idPar">
+        <label for="idPar">Par</label>
+        <br><br>
+        <input type="button" value="While" onclick="impar()">
+        <input type="button" value="For" onclick="par()">
+    </form>
+    <script>
+        function impar() {
+            let num1 = Number(document.getElementById("idNum1").value)
+            let num2 = Number(document.getElementById("idNum2").value)
+
+            
+        }
+        function par() {
+            let num1 = Number(document.getElementById("idNum1").value)
+            let num2 = Number(document.getElementById("idNum2").value)
+        }
+    </script>
+</body>
+</html>
