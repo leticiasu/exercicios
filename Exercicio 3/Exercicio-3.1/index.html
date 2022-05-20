@@ -4,21 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>>20, / 2</title>
 </head>
 <body>
-    <form action="">
-        <label for="idNumero">Número:</label><br>
-        <input type="number" id="idNumero" name="nmNumer" step="0.01">
-
-        <br><br>
-
-        <output id="idOut">Resultado:</output>
-
-        <br><br>
-
-        <input type="button" value="Calcular" onclick="calcular()">
-    </form>
+    <fieldset>
+        <legend>Se o número for > 20, / 2</legend>
+            <form action="">
+                <label for="idNumero">Número:</label><br>
+                <input type="number" id="idNumero" name="nmNumer" step="0.01">
+                <br><br>
+                <output id="idOut"></output>
+                <br><br>
+                <input type="button" value="Calcular" onclick="calcular()">
+            </form>
+    </fieldset>
 
     <script>
         function calcular() {
@@ -28,8 +27,9 @@
 
             if (numero > 20 ) {
                 var resultado = (numero / 2)
+                document.getElementById("idOut").value = "NÚMERO " + resultado
             }
-            document.getElementById("idOut").value = "NÚMERO: " + resultado
+            document.getElementById("idOut").value = "NÚMERO " + numero
         }
     </script>
 
