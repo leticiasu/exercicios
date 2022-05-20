@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preço de venda</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Preço de venda</legend>
+        <h1>Margem de lucro liquido 35%</h1>
+            <form action="">
+                <label for="idPrecoCompra">Preço de compra</label><br>
+                <input type="number" id="idPrecoCompra" name="nmPrecoCompra" step="0.01">
+                <br><br>
+                <label for="idCustos">Custos fixos</label><br>
+                <input type="number" id="idCustos" name="nmCustos" step="0.01">
+                <br><br>
+                <output id="idOutVenda"></output>
+                <br><br>
+                <output id="idOutLucro"></output>
+                <input type="button" value="Calcular" onclick="calcular()">
+            </form>
+            <script>
+                function calcular() {
+                    let precoCompra = document.getElementById("idPrecoCompra").value
+                    let custos = document.getElementById("idCustos").value
+                    let outVenda = document.getElementById("idOutVenda")
+                    let outLucro = document.getElementById("idOutLucro")
+                   
+
+                }
+            </script>
+
+    </fieldset>
+</body>
+</html>
