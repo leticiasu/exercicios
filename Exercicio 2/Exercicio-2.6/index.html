@@ -4,9 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+    <title>Média</title>
+    </head>
+    <body>
+        <fieldset>
+            <legend>Média</legend>
+                <form action="">
+                    <label for="idNota1">Primeira Nota</label><br>
+                    <input type="number" id="idNota1" name="nmNota1" step="0.01">
+                    <br><br>
+                    <label for="idNota2">Segunda Nota</label><br>
+                    <input type="number" id="idNota2" name="nmNota2" step="0.01">
+                    <br><br>
+                    <label for="idNota3">Terceira Nota</label><br>
+                    <input type="number" id="idNota3" name="nmNota3" step="0.01">
+                    <br><br>
+                    <label for="idNota4">Quarta Nota</label><br>
+                    <input type="number" id="idNota4" name="nmNota4" step="0.01">
+                    <br><br>
+                    <output id="idOut"></output>
+                    <br><br>
+                    <input type="button" value="Calcular" onclick="calcularMedia()">
+                </form>
+        </fieldset>
+        <script>
+            function calcularMedia() {
+                let nota1 = Number (document.getElementById("idNota1").value)
+                let nota2 = Number (document.getElementById("idNota2").value)
+                let nota3 = Number (document.getElementById("idNota3").value)
+                let nota4 = Number (document.getElementById("idNota4").value)
+                let media = (nota1 + nota2 + nota3 + nota4)/ 4
+                let out = document.getElementById("idOut")
+
+                out.value = "Média: " + media
+            }
+
+        </script>
+        
+    </body>
+    </html>
