@@ -4,23 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Peso Ideal</title>
 </head>
 <body>
-    <form action="">
-        <label for="idAltura">Altura</label><br>
-        <input type="number" id="idAltura" name="nmAltura" step="0.01">
+    <fieldset>
+        <legend>Seu peso ideal</legend>
+            <form action="">
+                <label for="idAltura">Altura</label><br>
+                <input type="number" id="idAltura" name="nmAltura" step="0.01">
 
-        <br><br>
+                <br><br>
 
-        <output id="idOut">Peso Ideal:</output>
+                <output id="idOut">Peso Ideal:</output>
 
-        <br><br>
+                <br><br>
 
-        <input type="button" value="Masculino" onclick="calcularMasc()">
-        <input type="button" value="Feminino" onclick="calcularFem()">
+                <input type="button" value="Masculino" onclick="calcularMasc()">
+                <input type="button" value="Feminino" onclick="calcularFem()">
 
-    </form>
+            </form>
+    </fieldset>
     <script>
         function calcularMasc() {
         var altura = Number (document.getElementById("idAltura").value)
