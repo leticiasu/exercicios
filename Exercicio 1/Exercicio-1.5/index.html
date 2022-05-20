@@ -21,10 +21,18 @@
 
             <br><br>
 
-            <button type="submit">Login</button>
+            <input type="button" value="Login" onclick="pegardados()">
             <button type="reset">Recuperar senha</button>
 
         </fieldset>
     </form>
+    <script>
+        function pegardados() {
+            let usuario = document.getElementById("idUsuario").value
+            let senha = document.getElementById("idSenha").value
+                console.log("Usuario: " + usuario + " Senha:" + senha);
+        }
+        
+    </script>
 </body>
 </html>
