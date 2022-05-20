@@ -20,15 +20,20 @@
                 <output id="idOutVenda"></output>
                 <br><br>
                 <output id="idOutLucro"></output>
+                <br><br>
                 <input type="button" value="Calcular" onclick="calcular()">
             </form>
             <script>
                 function calcular() {
-                    let precoCompra = document.getElementById("idPrecoCompra").value
-                    let custos = document.getElementById("idCustos").value
+                    let precoCompra = Number (document.getElementById("idPrecoCompra").value)
+                    let custos = Number (document.getElementById("idCustos").value)
                     let outVenda = document.getElementById("idOutVenda")
                     let outLucro = document.getElementById("idOutLucro")
-                   
+                   let lucro = (precoCompra + custos) * 35 / 100
+                   let venda = (precoCompra + custos + lucro)
+
+                   outLucro.value = "Seu lucro vai ser de R$" + lucro
+                   outVenda.value = "O valor de sua venda deve ser de R$" + venda
 
                 }
             </script>
