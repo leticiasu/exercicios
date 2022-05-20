@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área das formas geométricas</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Área das formas geométricas</legend>
+            <form action="">
+                <p>Círculo</p>
+                <label for="idDiametro">Diametro</label><br>
+                <input type="number" id="idDiametro" name="nmDiametro" step="0.01">
+                <br><br>
+                <output id="idOutDiametro"></output>
+                
+                <p>Retângulo</p>
+                <label for="idLado1">Base</label><br>
+                <input type="number" id="idLado1" name="nmLado1" step="0.01">
+                <br><br>
+                <label for="idLado2">Altura</label><br>
+                <input type="number" id="idLado2" name="nmLado2" step="0.01">
+                <br><br>
+                <output id="idOutRetangulo"></output>
+                
+                <p>Triângulo Retângulo</p>
+                <label for="idBase">Cateto 1</label><br>
+                <input type="number" id="idBase" name="nmBase" step="0.01">
+                <br><br>
+                <label for="idAltura">Cateto 2</label><br>
+                <input type="number" id="idAltura" name="nmAltura" step="0.01">
+                <br><br>
+                <output id="idOutTrianguloRe"></output>
+                
+                <p>Triângulo Equilátero</p>
+                <label for="idBase2">Base</label><br>
+                <input type="number" id="idBase2" name="nmBase2" step="0.01">
+                <br><br>
+                <label for="idAltura2">Altura</label><br>
+                <input type="number" id="idAltura2" name="nmAltura2" step="0.01">
+                <br><br>
+                <output id="idOutTrianguloEq"></output>
+                <br><br>
+
+                <input type="button" value="Calcular" onclick="calcular()">
+            </form>
+    </fieldset>
+            <script>
+                function calcular() {
+                    let diametro = Number(document.getElementById("idDiametro").value)
+                    let raio = (diametro / 2)
+                    let outDiametro = document.getElementById("idOutDiametro")
+                    outDiametro.value = "Raio: " + raio
+
+                    let lado1 = Number (document.getElementById("idLado1").value)
+                    let lado2 = Number (document.getElementById("idLado2").value)
+                    let areaRe = (lado1 * lado2)
+                    let outRetangulo = document.getElementById("idOutRetangulo")
+                    outRetangulo.value = "Área: " + areaRe
+
+                    let baseTriRe = Number (document.getElementById("idBase").value)
+                    let alturaTriRe = Number(document.getElementById("idAltura").value)
+                    let areaTriRe = (baseTriRe * alturaTriRe) / 2
+                    let outTrianguloRe = document.getElementById("idOutTrianguloRe")
+                    outTrianguloRe.value = "Área: " + areaTriRe
+
+                    let baseTriEq = Number (document.getElementById("idBase2").value)
+                    let alturaTriEq = Number(document.getElementById("idAltura2").value)
+                    let areaTriEq = (baseTriEq * alturaTriEq) / 2
+                    let outTrianguloEq = document.getElementById("idOutTrianguloEq")
+                    outTrianguloEq.value = "Área: " + areaTriEq
+
+                }
+            </script>
+</body>
+</html>
