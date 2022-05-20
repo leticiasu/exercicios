@@ -3,22 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pegar o valor de um campo e jogar no outro</title>
 </head>
 <body>
+<fieldset>
+    <legend>Jogar o valor do primeiro campo no segundo</legend>
     <form action="">
-    <label for="idText">Texto:</label><br>
-    <input type="text" id="idText" name="nmText">
-    <br><br>
+        <label for="idText">Texto:</label><br>
+        <input type="text" id="idText" name="nmText">
+        <br><br>
 
-    <label for="idNum2">Texto 2</label><br>
-    <input type="text" name="idNum2" id="idNum2">
+        <label for="idNum2">Texto 2</label><br>
+        <input type="text" name="idNum2" id="idNum2">
 
-    <br><br>
+        <br><br>
 
-    <button type="button" onclick="pegarDados()">Copiar</button>
-</form>
+        <button type="button" onclick="pegarDados()">Copiar</button>
+    </form>
+</fieldset>
 
     <script>
         function pegarDados(){
