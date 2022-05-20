@@ -4,27 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Calcular IMC</title>
 </head>
 <body>
-    <form action="">
-        <label for="idAltura">Altura</label><br>
-        <input type="number" id="idAltura" name="nmAltura" step="0.01">
+    <fieldset>
+        <legend>Calcular o IMC</legend>
+            <form action="">
+                <label for="idAltura">Altura</label><br>
+                <input type="number" id="idAltura" name="nmAltura" step="0.01">
+             <br><br>
+                <label for="idPeso">Peso</label><br>
+                <input type="number" id="idPeso" name="nmPeso" step="0.01">
+             <br><br>
+                <output id="idOut">IMC:</output>
+            <br><br>
+                 <input type="button" value="calcular" onclick="calcular()">
 
-   <br><br>
-
-        <label for="idPeso">Peso</label><br>
-        <input type="number" id="idPeso" name="nmPeso" step="0.01">
-
-        <br><br>
-
-        <output id="idOut">IMC:</output>
-
-   <br><br>
-
-            <input type="button" value="calcular" onclick="calcular()">
-
-   </form>
+        </form>
+   </fieldset>
 
     <script>
         function calcular() {
