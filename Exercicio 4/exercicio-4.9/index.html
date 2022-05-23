@@ -10,8 +10,8 @@
     <fieldset>
         <legend>Área das formas geométricas</legend>
             <form action="">
-              <input type="radio" id="idCírculo" name="nmForma">
-              <label for="idCírculo">Círculo</label><br>
+              <input type="radio" id="idCirculo" name="nmForma">
+              <label for="idCirculo">Círculo</label><br>
 
               <input type="radio" id="idRetangulo" name="nmForma">
               <label for="idRetangulo">Retângulo</label><br>
@@ -22,38 +22,83 @@
               <input type="radio" id="idTriEq" name="nmForma">
               <label for="idTriEq">Triângulo Equilátero</label>
               <br><br>
-              <label for="idRaio">Raio</label><br>
-              <input type="number" id="idRaio" name="nmRaio">
+
+              <label for="idMedidaBase" id="idLbMedidaBase">Raio</label><br>
+              <input type="number" id="idMedidaBase" name="nmMedidaBase" step="0.01">
               <br><br>
 
-              <label for="idLado1">Lado 1</label><br>
-              <input type="number" id="idLado1" name="nmLado1">
-              <br><br>
-              <label for="idLado2">Lado 2</label><br>
-              <input type="number" id="idLado2" name="nmLado2">
+              <label for="idMedidaSeq" id="idLbMedidaSeq" >Altura </label><br>
+              <input type="number" id="idMedidaSeq" name="nmMedidaSeq" step="0.01">
               <br><br>
 
-              <label for="idBase">Base</label><br>
-              <input type="number" id="idBase" name="nmBase">
+              <output id="idOut">Area :</output>
               <br><br>
-              <label for="idAltura">Altura</label><br>
-              <input type="number" id="idAltura" name="nmAltura">
-              <br><br>
-
-              <label for="idLado">Lado</label><br>
-              <input type="number" id="idLado" name="nmLado">
-              <br><br>
-
-                <output id="idOut"></output>
-                <br><br>
-                <input type="button" value="Calcular" onclick="calcular()">
+              <input type="button" value="Escolher" onclick="escolherFormaGeo()">
+              <input type="button" value="Calcular" onclick="calcularArea()">
             </form>
     </fieldset>
             <script>
-                function calcular() {
-                    
+                     function calcularArea() {
+                const opCirculo = document.getElementById("idCirculo").checked
+                const opRetangulo = document.getElementById("idRetangulo").checked
+                const opTriRetangulo = document.getElementById("idTriRe").checked
+                const opTriEquilatero = document.getElementById("idTriEq").checked
 
+                const baseRaioLado = Number(document.getElementById("idMedidaBase").value)
+                const altura = Number(document.getElementById("idMedidaSeq").value)
+                let area
+
+                if (opCirculo) {
+                    console.log("raio " + baseRaioLado );
+                    area = baseRaioLado * baseRaioLado * Math.PI
+                } else if (opRetangulo) {
+                    area = baseRaioLado * altura
+                } else if (opTriRetangulo) {
+                    area = (baseRaioLado * altura)/2
+                } else if (opTriEquilatero) {
+                    area = ((baseRaioLado * baseRaioLado) * (3 **(1/2)))/4 
                 }
+
+                console.log("Area " + area);
+                document.getElementById("idOut").value = "Area: " + area
+            }
+            
+                function escolherFormaGeo() {
+                const opCirculo = document.getElementById("idCirculo").checked
+                const opRetangulo = document.getElementById("idRetangulo").checked
+                const opTriRetangulo = document.getElementById("idTriRe").checked
+                const opTriEquilatero = document.getElementById("idTriEq").checked
+
+                
+                if (opCirculo) {
+                    document.getElementById("idLbMedidaSeq").hidden = true
+                    document.getElementById("idMedidaSeq").hidden = true
+
+                    document.getElementById("idLbMedidaBase").innerText = "Raio"
+                } else if (opRetangulo) {
+                    document.getElementById("idLbMedidaSeq").hidden = false
+                    document.getElementById("idMedidaSeq").hidden = false
+
+                    document.getElementById("idLbMedidaBase").innerText = "Base"
+                    document.getElementById("idLbMedidaSeq").innerText = "Altura"
+
+                } else if (opTriRetangulo) {
+                    document.getElementById("idLbMedidaSeq").hidden = false
+                    document.getElementById("idMedidaSeq").hidden = false
+
+                    document.getElementById("idLbMedidaBase").innerText = "Base"
+                    document.getElementById("idLbMedidaSeq").innerText = "Altura"
+                    
+                } else if (opTriEquilatero) {
+                    document.getElementById("idLbMedidaSeq").hidden = true
+                    document.getElementById("idMedidaSeq").hidden = true
+
+                    document.getElementById("idLbMedidaBase").innerText = "Lado"
+                    document.getElementById("idLbMedidaSeq").innerText = "Altura"
+                }
+            }
+
+                
             </script>
 </body>
 </html>
