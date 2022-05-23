@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <legend>Login</legend>
+
+            <label for="idUsuario">Usuário:</label><br>
+            <input type="text" id="idUsuario" name="nmUsuario" placeholder="Usuário" required autocomplete="on">
+
+            <br><br>
+
+            <label for="idSenha">Senha:</label><br>
+            <input type="password" id="idSenha" name="nmSenha" placeholder="Senha" required autocomplete="off" minlength="8" maxlength="15">
+
+            <br><br>
+
+            <output id="idOut"></output>
+            <br><br>
+
+            <input type="button" value="Login" onclick="pegardados()">
+            <button type="reset">Recuperar senha</button>
+
+        </fieldset>
+    </form>
+    <script>
+
+        var usuario1 = "Leticia Pedro"
+            var usuario2 = "Suzana Leticia"
+            var usuario3 = "Leticia Suzana"
+
+            var senha1 = "123ok"
+            var senha2 = "321deuboa"
+            var senha3 = "346ook"
+            var conTentativas = 0
+
+        function pegardados() {
+
+            let usuario = document.getElementById("idUsuario").value
+                let senha = document.getElementById("idSenha").value
+                let out = document.getElementById("idOut")
+
+                if (conTentativas < 3) {
+                    if ((usuario != usuario1)
+                    &&  (usuario != usuario2)
+                    &&  (usuario != usuario3)) {
+                        out.value = "Usuário Não Cadastrado"
+                    }
+
+                    if (((usuario == usuario1) && (senha != senha1))
+                    || ((usuario == usuario2) && (senha != senha2))
+                    || ((usuario == usuario3) && (senha != senha3))) {
+                        out.value = "Senha Incorreta"
+                    }
+
+                    if (((usuario == usuario1) && (senha == senha1)) 
+                    || ((usuario == usuario2) && (senha == senha2))
+                    || ((usuario == usuario3) && (senha == senha3))) {
+                        out.value = "Acesso Permitido"
+                    }
+
+                } else {
+                    out.value = "Usuário Bloqueado"
+                }
+                conTentativas++
+            }
+        
+    </script>
+
+</body>
+</html>
