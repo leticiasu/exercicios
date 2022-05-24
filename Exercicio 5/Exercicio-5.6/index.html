@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contagem regressiva de 30 a 1 com números divisiveis por 4 marcados</title>
+    </head>
+        <body>
+            <fieldset>
+                <legend>Contagem regressiva de 30 a 1 com números divisiveis por 4 marcados</legend>
+                <form action="">
+                    <output id="idOutWhile"></output>
+                    <br><br>
+                    <output id="idOutFor"></output>
+                    <br><br>
+                    <input type="button" value="Contar While" onclick="contarWhile()">
+                    <input type="button" value="Contar For" onclick="contarFor()">
+                </form>
+            </fieldset>
+            <script>
+                function contarWhile() {
+                    let cont = 30
+                    let textCont = ""
+                    let outWhile = document.getElementById("idOutWhile")
+
+                    while (cont > 0) {
+                        
+                        if ((cont % 4) == 0) {
+                            textCont = textCont + "[" + cont + "] "
+                        } else {
+                            textCont = textCont + cont + " "
+                        }
+                        cont = cont - 1
+                    }
+                    outWhile.value = "Inicio " + textCont + " Acabou."
+                }
+
+                function contarFor() {
+                    let textCont = ""
+                    let outFor = document.getElementById("idOutFor")
+
+                    for (let ind = 30; ind > 0; ind--) {
+                        
+                        if ((ind % 4) == 0) {
+                            textCont = textCont + "[" + ind + "] "
+                        } else {
+                            textCont = textCont + ind + " "
+                        }
+                        
+                    }
+                    outFor.value = "Inicio " + textCont + " Acabou."
+                }
+            </script>
+            
+        </body>
+    </html>
