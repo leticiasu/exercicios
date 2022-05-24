@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soma</title>
+    </head>
+        <body>
+            <fieldset>
+                <legend>Soma</legend>
+                <form action="">
+                    <output id="idOutWhile"></output>
+                    <br><br>
+                    <output id="idOutFor"></output>
+                    <br><br>
+                    <input type="button" value="Contar While" onclick="contarWhile()">
+                    <input type="button" value="Contar For" onclick="contarFor()">
+                </form>
+            </fieldset>
+
+            <script>
+                function contarWhile() {
+                    let cont = 6
+                    let soma = 0
+
+                    while (cont < 101) {
+                        soma = soma + cont
+                        cont = cont + 2
+                    }
+                    document.getElementById("idOutWhile").value = "PA: " + soma
+                }
+
+                function contarFor() {
+                    let soma = 0
+
+                    for (let index = 6; index < 101; index += 2) {
+                        soma = soma + index
+                    }
+                    document.getElementById("idOutFor").value = "PA: " + soma
+                }
+            </script>
+        </body>
+    </html>
