@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contagem</title>
+</head>
+    <body>
+        <fieldset>
+            <legend>Contagem</legend>
+            <form action="">
+                <label for="idLimite">Limite de contagem</label><br>
+                <input type="number" id="idLimite" name="nmLimite">
+                <br><br>
+                <output id="idOutWhile"></output>
+                <br><br>
+                <output id="idOutFor"></output>
+                <br><br>
+                <input type="button" value="Contar While" onclick="contarWhile()">
+                <input type="button" value="Contar For" onclick="contarFor()">
+            </form>
+        </fieldset>
+        <script>
+            function contarWhile() {
+                let cont = 1
+                let limite = Number(document.getElementById("idLimite").value)
+                let textCont = ""
+                limite++
+
+                while (cont < limite) {
+                    textCont = textCont + cont + " "
+                    cont = cont + 1
+                }
+                document.getElementById("idOutWhile").value = "Inicio " + textCont + " Acabou!!"
+            }
+
+            function contarFor() {
+                let textCont = ""
+                let limite = Number(document.getElementById("idLimite").value)
+
+                for (let index = 1; index <= limite; index++) {
+                    textCont = textCont + index + " "
+                }
+                document.getElementById("idOutFor").value = "Inicio " + textCont + " Acabou!!"
+            }
+        </script>
+        
+    </body>
+</html>
