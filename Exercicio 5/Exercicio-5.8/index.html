@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valores no intervalo</title>
+    </head>
+        <body>
+            <fieldset>
+                <legend>Valores no intervalo</legend>
+                <form action="">
+                    <label for="idLimiteInf">Limite Inferior</label><br>
+                    <input type="number" id="idLimiteInf" name="nmLimiteInf">
+                    <br><br>
+                    <label for="idIncremento">Incremento / Passo</label><br>
+                    <input type="number" id="idIncremento" name="nmIncremento">
+                    <br><br>
+                    <label for="idLimiteSup">Limite Superior</label><br>
+                    <input type="number" id="idLimiteSup" name="nmLimiteSup">
+                    <br><br>
+                    <output id="idOut"></output>
+                    <br><br>
+                    <input type="button" value="Verificar" onclick="contar()">
+                </form>
+            </fieldset>
+            <script>
+
+                function contar() {
+                    let limiteInf = Number(document.getElementById("idLimiteInf").value)
+                    let incremento = Number(document.getElementById("idIncremento").value)
+                    let limiteSup = Number(document.getElementById("idLimiteSup").value)
+
+                    let textCont = ""
+                    let cont = limiteInf
+
+                    while (cont < limiteSup) {
+                        textCont = textCont + cont + " "
+
+                        cont = cont + incremento
+                    }
+                    document.getElementById("idOut").value = "Inicio " + textCont + " Acabou!"
+                }
+            </script>
+            
+        </body>
+    </html>
