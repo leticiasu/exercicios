@@ -4,36 +4,69 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Impar Par</title>
 </head>
 <body>
-    <form action="">
-        <label for="idNum1">Primeiro Número</label><br>
-        <input type="number" name="nmNum1" id="idNum1">
-        <br><br>
-        <label for="idNum2">Segundo Número</label><br>
-        <input type="number" name="nmNum2" id="idNum2">
-        <br><br>
-        <output id="idOut"></output>
-        <br><br>
-        <input type="radio" name="nmImparPar" id="idImpar" checked>
-        <label for="idImpar">Impar</label>
-        <input type="radio" name="nmImparPar" id="idPar">
-        <label for="idPar">Par</label>
-        <br><br>
-        <input type="button" value="While" onclick="impar()">
-        <input type="button" value="For" onclick="par()">
-    </form>
+    <fieldset>
+        <legend>Impar Par</legend>
+        <form action="">
+            <label for="idNum1">Primeiro Número</label><br>
+            <input type="number" name="nmNum1" id="idNum1">
+            <br><br>
+            <label for="idNum2">Segundo Número</label><br>
+            <input type="number" name="nmNum2" id="idNum2">
+            <br><br>
+            <output id="idOutWhile"></output>
+            <br><br>
+            <output id="idOutPar"></output>
+            <br><br>
+            <output id="idOutImpar"></output>
+            <br><br>
+            <input type="radio" name="nmImparPar" id="idImpar" checked>
+            <label for="idImpar">Impar</label>
+            <input type="radio" name="nmImparPar" id="idPar">
+            <label for="idPar">Par</label>
+            <br><br>
+            <input type="button" value="Conta While" onclick="contarWhile()">
+            <input type="button" value="Gerar número randomico" onclick="gerarNumeroRam()">
+        </form>
+    </fieldset>
     <script>
-        function impar() {
+        function contarWhile() {
             let num1 = Number(document.getElementById("idNum1").value)
             let num2 = Number(document.getElementById("idNum2").value)
+            let numPar = document.getElementById("idPar").checked
+
+            let numerosPares = ""
+            let numerosImpares = ""
+            let cont = num1
+            let contPar = 0
+            let contImpar = 0
+
+            num2++
+            while (cont < num2) {
+                if ((cont % 2) == 0 ) {
+                    numerosPares = numerosPares + cont + " "
+                    contPar++ 
+                }else{
+                    numerosImpares = numerosImpares + cont + " "
+                    contImpar++
+                }
+                cont++
+            }
+
+            if (numPar) {
+                document.getElementById("idOutWhile").value = "Numeros Pares: " + numerosPares
+            }else{
+                document.getElementById("idOutWhile").value = "Numeros Impares: " + numerosImpares
+            }
+            document.getElementById("idOutPar").value = "Quantidade de Pares: " + contPar
+            document.getElementById("idOutImpar").value = "Quantidade de Impares: " + contImpar
 
             
         }
-        function par() {
-            let num1 = Number(document.getElementById("idNum1").value)
-            let num2 = Number(document.getElementById("idNum2").value)
+        function gerarNumeroRam() {
+            console.log(parseInt(Math.random() * 10));
         }
     </script>
 </body>
