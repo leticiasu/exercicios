@@ -4,35 +4,45 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>Contar</title>
     </head>
     <body>
-        <form action="">
-            <button type="button" onclick="ContarWhile()">Contar While</button>
-        <output id="idOutWhile"></output>
-
-        <button type="button" onclick="ContarFor()">Contar For</button>
-        <output id="idOutFor"></output>
-    </form>
+        <fieldset>
+            <legend>Início 5 6 7 8 9 10 11 12 Acabou</legend>
+            <form action="">
+                <output id="idOutWhile"></output>
+                <br>
+                <output id="idOutFor"></output>
+                <br><br>
+                <button type="button" onclick="ContarWhile()">Contar While</button>
+                <button type="button" onclick="ContarFor()">Contar For</button>
+            </form>
+        </fieldset>
 
     <script>
+        var outWhile = document.getElementById("idOutWhile")
+        var outFor = document.getElementById("idOutFor")
         function ContarWhile() {
             
         let cont = 5
         let textCont = ""
-        var out = document.getElementById("idOutWhile")
+        
 
         while (cont < 13) {
             textCont = textCont + cont + " "
             cont++
         }
 
-        out.value = "Início " + textCont + " Acabou"
+        outWhile.value = "Início " + textCont + " Acabou"
     }
+            function ContarFor() {
+                let textCont = ""
 
-        for (let index = 0; index < 13; index++) {
-            textCont = textCont + index
+        for (let index = 5; index < 13; index++) {
+            textCont = textCont + index + " "
         }
+        outFor.value = "Início " + textCont + " Acabou"
+    }
 
     </script>
     </body>
