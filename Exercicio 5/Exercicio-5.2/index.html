@@ -4,29 +4,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Contar em ordem decrescente</title>
 </head>
 <body>
-    <output id="idOut"></output>
-    <p id="idParagrafo"></p>
-<script>
-    var contador = 15
-    var textoContador = ""
-    var out = document.getElementById("idOut")
+    <fieldset>
+        <legend>Ordem decrescente</legend>
+    
+        <output id="idOutWhile"></output>
+        <br>
+        <output id="idOutFor"></output>
+        <br><br>
+        <input type="button" value="Contar While" onclick="ContarWhile()">
+        <input type="button" value="Contar For" onclick="ContarFor()">
+    </fieldset>
+    
+    <script>
+    function ContarWhile(){
 
-    while (contador > 2) {
-        textoContador = textoContador + contador + " "
+        let contador = 15
+        let textoContador = ""
+        let outWhile = document.getElementById("idOutWhile")
 
-        contador--
+        while (contador > 2) {
+            textoContador = textoContador + contador + " "
+
+            contador--
+        }
+
+        outWhile.value = "Início " + textoContador + " Acabou"
     }
 
-    out.value = "Início " + textoContador + " Fim"
+    function ContarFor() {
+        let outFor = document.getElementById("idOutFor")
+        let textCont = ""
 
-    for (let index = 0; index < 16; index--) {
-        console.log("For " + index);
-        var paragrafo = document.getElementById("idParagrafo")
-
-        paragrafo.value = "Ínicio " + index
+        for (let index = 15; index > 2; index--) {
+            textCont = textCont + index + " "
+        }
+            outFor.value = "Início " + textCont + " Acabou"
+        
     }
 
 </script>
