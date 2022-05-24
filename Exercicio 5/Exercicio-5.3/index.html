@@ -4,31 +4,50 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Contar com intervalo de 4 numeros</title>
 </head>
 <body>
-    <form action="">
-        <button type="button" onclick="ContarWhile()">Contar While</button>
-    <output id="idOutWhile"></output>
-
-    <button type="button" onclick="ContarFor()">Contar For</button>
-    <output id="idOutFor"></output>
-</form>
-
-<script>
-    function ContarWhile() {
+    <fieldset>
+        <legend>Contar com intervalo de 4 numeros</legend>
+        <form action="">
+            
+            <output id="idOutWhile"></output>
+            <br>
+            <output id="idOutFor"></output>
+            <br><br>
+            <input type="button" value="Contar While" onclick="contarWhile()">
+            <input type="button" value="Contar For" onclick="contarFor()">
         
-    let cont = 5
-    let textCont = ""
-    var out = document.getElementById("idOutWhile")
+         </form>
+    </fieldset>
 
-    while (cont < 21) {
-        textCont = textCont + cont + " "
-        cont = cont + 4
+    <script>
+
+        function contarWhile() {
+            
+            let cont = 0
+            let textCont = ""
+            var outWhile = document.getElementById("idOutWhile")
+
+            while (cont < 21) {
+                textCont = textCont + cont + " "
+                cont = cont + 4
+            }
+
+        outWhile.value = "Início " + textCont + " Acabou"
+    }
+    function contarFor() {
+
+        var outFor = document.getElementById("idOutFor")
+        let textoContador = ""
+
+        for (let index = 0; index < 21; index += 4) {
+            textoContador = textoContador + index + " "
+            
+        }
+        outFor.value =  "Início " + textoContador + " Acabou"
     }
 
-    out.value = "Início " + textCont + " Acabou"
-}
-</script>
+    </script>
 </body>
 </html>
