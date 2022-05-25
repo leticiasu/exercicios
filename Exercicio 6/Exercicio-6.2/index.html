@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numeros primos contidos no intervalo</title>
+    </head>
+        <body>
+            <fieldset>
+                <legend>Numeros primos contidos no intervalo</legend>
+                <form action="">
+
+                    <label for="idInicial">Valor Inicial</label><br>
+                    <input type="number" id="idInicial" name="nmInicial">
+                    <br><br>
+
+                    <label for="idFinal">Valor Final</label><br>
+                    <input type="number" id="idFinal" name="nmFinal">
+                    <br><br>
+
+                    <output id="idOut"></output>
+                    <br><br>
+
+                    <input type="button" value="Verificar" onclick="verificar()">
+
+                </form>
+            </fieldset>
+
+            <script>
+                function verificar() {
+
+                    let inicial = Number(document.getElementById("idInicial").value)
+                    let final = Number(document.getElementById("idFinal").value)
+
+                    let isPrimo = true
+
+                    for (let nu = inicial; nu < (final + 1); nu++) {
+                    for (let i = 2; i < nu; i++) {
+                        if (nu % i == 0) {
+                            isPrimo = false
+                        } 
+                    }  
+                    if (isPrimo) {
+                        console.log(nu + " é Primo");
+                    }
+                    isPrimo = true
+                    
+                }
+                
+            }
+            
+            
+            </script>
+        </body>
+    </html>
