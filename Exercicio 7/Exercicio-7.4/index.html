@@ -16,7 +16,11 @@
         var numeros = []
 
         for (let i = 0; i < 10; i++) {
-           numeros.unshift(i)
+          if ((i % 2) == 0) {
+              numeros.push(5)
+          } else {
+            numeros.push(3)
+          }
             
         }
         console.table(numeros)
