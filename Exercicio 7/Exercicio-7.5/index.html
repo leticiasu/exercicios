@@ -13,13 +13,20 @@
 
     <script>
         var numeros = []
-        var soma = 0
+        var eleAnteriro = 0
+        var eleSeq = 1
+        var eleProx
 
-        for (let i = 1; i < 16; i += i) {
-            numeros = soma + i
+        for (let i = 0; i < 16; i++) {
+            console.log(eleSeq)
+            numeros.push(eleSeq)
+
+            eleProx = eleSeq + eleAnteriro
+            eleAnteriro = eleSeq
+            eleSeq = eleProx
 
             
-            console.table(numeros)
+            
         }
 
     </script>
