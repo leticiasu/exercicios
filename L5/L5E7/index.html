@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de adivinhação</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Adivinhe o número</legend>
+        <form action="">
+            <label for="idNumeroApostado">Aposte um Número:</label><br>
+            <input type="number" id="idNumeroApostado" name="nmNumeroApostadoe">
+            <br><br>
+
+            <label for="idOutMensagem">Resultado: </label>
+            <output id="idOutMensagem"></output>
+            <br><br>
+
+            <input type="button" value="Enviar" onclick="enviar()">
+            
+        </form>
+    </fieldset>
+
+    <script>
+        var numeroSorteado = parseInt(Math.random() * 11)
+        if (numeroSorteado == 0) {
+            numeroSorteado = 1
+        }
+        console.log(numeroSorteado);
+
+        var tentativa = 1
+        var msnSaida = document.getElementById("idOutMensagem")
+
+        function enviar() {
+
+            let numeroApostado = Number(document.getElementById("idNumeroApostado").value)
+            tentativa++
+
+            if (tentativa <= 3) {
+
+            if (numeroApostado == numeroSorteado) {
+                msnSaida.value = "Parabéns você acertou!"
+            }
+            if (numeroApostado > numeroSorteado) {
+                msnSaida.value = "O número apostado é maior que o sorteado"
+            }
+            if (numeroApostado < numeroSorteado) {
+                msnSaida.value = "O número apostado é menor que o sorteado"
+            }
+           if (tentativa == 3 && numeroApostado == numeroSorteado) {
+            msnSaida.value = "Parabéns você acertou!"
+           } else {
+            msnSaida.value = "Jogo encerrado, você perdeu, mais sorte da próxima vez!"
+           }
+          
+        }
+    }
+    
+    </script>
+</body>
+</html>
