@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sequência de Fibonacci</title>
+</head>
+<body>
+    <form action="">
+        <output id="idOut">Sequência de Fibonacci:</output>
+        <br><br>
+        <input type="button" value="Sequência de Fibonacci" onclick="numFibo()">
+    </form>
+
+    <script>
+        function numFibo() {
+            
+            let numFi = 0
+            let numAnt = 0
+            let numSeq = 1
+            let numProx
+
+            while (numFi < 10) {
+                
+                numProx = numSeq + numAnt
+                numAnt = numSeq
+                numSeq = numProx
+                numFi++
+                console.log(numProx);
+                
+            }
+            document.getElementById("idOut").value = "Sequência de Fibonacci:" + numProx
+        }
+    </script>
+</body>
+</html>
