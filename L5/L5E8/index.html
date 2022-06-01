@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graus Celsius em graus Fahrenheit</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Graus Celsius em graus Fahrenheit</legend>
+        <form action="">
+            <label for="idCelcius">Graus Celcius</label><br>
+            <input type="number" id="idCelcius" name="nmCelcius" step="0.01">
+            <br><br>
+
+            <output id="idOut">Fahrenheit:</output>
+            <br><br>
+
+            <input type="button" value="Processar" onclick="processar()">
+        </form>
+    </fieldset>
+    
+    <script>
+        var out = document.getElementById("idOut")
+
+        function processar() {
+            let celcius = Number(document.getElementById("idCelcius").value)
+            let fahrenheit = (9 * celcius + 160) / 5
+            out.value = "Fahrenheit: " + fahrenheit
+        }
+    </script>
+</body>
+</html>
