@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idades</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Idades</legend>
+        <form action="">
+            <label for="idIdade">Idade</label><br>
+            <input type="number" id="idIdade" name="nmIdade">
+            <br><br>
+
+            <input type="button" value="Enviar" onclick="enviar()">
+            <br><br>
+
+            <label for="idOutMediaIdade">Média de Idades:</label><br>
+            <output id="idOutMediaIdade"></output>
+            <br><br>
+
+            <label for="idPessoasMaior18">Quantidade de pessoas maiores de 18 anos: </label><br>
+            <output id="idPessoasMaior18"></output>
+            <br><br>
+            <label for="idPessoasMenor5">Quantidade de pessoas menores de 5 anos: </label><br>
+            <output id="idPessoasMenor5"></output>
+            <br><br>
+
+            <label for="idMaiorIdade">Maior Idade: </label><br>
+            <output id="idMaiorIdade"></output>
+
+        </form>
+    </fieldset>
+
+        <script>
+
+            var somaIdades = 0 
+            var contIdade = 0 
+            var mediaIdades = 0
+            var contIdadeMaior18 = 0 
+            var contIdadeMenor5 = 0
+            var maiorIdade = -1
+
+            function enviar() {
+
+                let idade = Number(document.getElementById("idIdade").value)
+                somaIdades = somaIdades + idade
+                contIdade++ 
+                mediaIdades = (somaIdades/contIdade).toFixed(2)
+                
+                if (idade > 18) {
+                    contIdadeMaior18++
+                }
+                
+                if (idade < 5) {
+                    contIdadeMenor5++
+                }
+                
+                if (idade > maiorIdade) {
+                    maiorIdade = idade
+                } 
+
+                document.getElementById("idOutMediaIdade").value = mediaIdades
+                document.getElementById("idPessoasMaior18").value = contIdadeMaior18
+                document.getElementById("idPessoasMenor5").value = contIdadeMenor5
+                document.getElementById("idMaiorIdade").value = maiorIdade
+                
+            }
+
+        </script>
+</body>
+</html>
