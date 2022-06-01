@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de temperaturas</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Conversor de temperaturas</legend>
+
+        <input type="radio" id="idCelcius" name="nmTemp" checked>
+        <label for="idCelcius">Celcius</label><br>
+
+        <input type="radio" id="idKelvin" name="nmTemp">
+        <label for="idKelvin">Kelvin</label><br>
+
+        <input type="radio" id="idFahrenheit" name="nmTemp">
+        <label for="idFahrenheit">Fahrenheit</label><br><br>
+
+        <label for="idTemperatura">Temperatura</label><br>
+        <input type="number" id="idTemperatura" name="nmTemperatura">
+        <br><br>
+
+        <output id="idOut">Temperatura:</output>
+        <br><br>
+
+        <input type="button" value="Calcular" onclick="calcularTemp()">
+
+    </fieldset>
+
+    <script>
+
+        var out = document.getElementById("idOut")
+
+        function calcularTemp() {
+            
+            let temperatura = Number(document.getElementById("idTemperatura").value)
+            let celcius = document.getElementById("idCelcius").checked
+            let kelvin = document.getElementById("idKelvin").checked
+            let fahrenheit = document.getElementById("idFahrenheit").checked
+
+            
+
+            if (celcius) {
+                kelvinC = temperatura + 273
+                fahrenheitC = (9 * temperatura + 160) / 5
+
+                out.value ="Temperatura: Kelvin: " + kelvinC + " Fahrenheit: " + fahrenheitC
+
+                console.log(kelvinC);
+                console.log(fahrenheitC);
+            }
+
+            if (kelvin) {
+               celciusK = temperatura - 273
+               fahrenheitK = (temperatura - 273) * 9 / 5 + 32
+
+               out.value = "Temperatura: Celcius: " + celciusK + " Fahrenheit: " + fahrenheitK
+            }
+
+            if (fahrenheit) {
+                celciusF = (temperatura - 32) / 1.8
+                kelvinF = (temperatura - 32) * 5 / 9 + 273.15
+
+                out.value = "Temperatura: Celcius: " + celciusF + " Kelvin: " + kelvinF
+            }
+        }
+    </script>
+    
+</body>
+</html>
