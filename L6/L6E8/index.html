@@ -11,9 +11,50 @@
         <legend>Multiplos de 10 entre 15 números digitados</legend>
 
         <form action="">
-            
+
+            <label for="idNumero">Digite um numero</label><br>
+            <input type="number" id="idNumero" name="nmNumero">
+            <br><br>
+
+            <output id="idOut"></output>
+            <br><br>
+
+            <input type="button" value="Enviar" onclick="enviarNum()">
+            <input type="button" value="Imprimir Números" onclick="relatorio()" >
+
         </form>
     </fieldset>
+
+    <script>
+
+        var numeros = []
+        var out = document.getElementById("idOut")
+
+        function enviarNum() {
+            let numero = document.getElementById("idNumero").value
+            numeros.push(numero)
+            document.getElementById("idNumero").value = ""
+            console.log(numeros);
+        }
+
+        function relatorio() {
+            var numerosMul = []
+
+            for (let i = 0; i < numeros.length; i++) {
+                numerosMul.push(numeros[i])
+               
+                console.log(numerosMul);
+            }
+            if (numero == (numero % 10) == 0) {
+                    numerosMul = numero
+                    out.value = "[ " + numerosMul + " ]"
+                }else {
+                    out.value = " " + numero
+                }
+            
+            
+        }
+    </script>
     
 </body>
 </html>
