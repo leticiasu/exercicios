@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nomes</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Nomes em ordem inversa ao digitado</legend>
+
+        <form action="">
+
+            <label for="idNome">Nome</label><br>
+            <input type="text" id="idNome" name="nmNome">
+            <br><br>
+
+            <output id="idOut"></output>
+            <br><br>
+
+            <input type="button" value="Enviar" onclick="enviarNome()">
+            <input type="button" value="Relatório" onclick="relatorio()">
+
+        </form>
+    </fieldset>
+
+    <script>
+
+        var nomes = []
+
+        function enviarNome() {
+            let nome = document.getElementById("idNome").value
+            nomes.push(nome)
+            document.getElementById("idNome").value = ""
+            console.log(nomes);
+        }
+
+        function relatorio() {
+            let inverterNomes = []
+
+            for (let i = 0; i < nomes.length; i++) {
+                inverterNomes.unshift(nomes[i])
+                console.log(inverterNomes);
+            }
+            document.getElementById("idOut").value = inverterNomes
+        }
+
+    </script>
+    
+</body>
+</html>
