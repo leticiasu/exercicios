@@ -26,7 +26,29 @@
     </fieldset>
     
     <script>
-        
+
+        var numeros = []
+        var out = document.getElementById("idOut")
+
+        function enviarNum() {
+            let numero = Number (document.getElementById("idNumero").value)
+            numeros.push(numero)
+            document.getElementById("idNumero").value = ""
+            console.log(numeros);
+        }
+
+        function relatorio() {
+            var numerosPar = []
+
+            for (let i = 0; i < 11; i++) {
+                numeros.push(numeros[i])
+                while (numerosPar = (numeros % 2) == 0) {
+                    
+                }
+                out.value = "[" + numerosPar + "]"
+                console.log(numerosPar);
+            }
+        }
     </script>
     
 </body>
