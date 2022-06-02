@@ -4,18 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>números gerados aleatóriamente</title>
 </head>
 <body>
+    <fieldset>
+        <legend>Números gerados aleatóriamente no array</legend>
+
+        <form action="">
+            
+            <output id="idOut"></output>
+            <br><br>
+
+            <input type="button" value="Revelar Números" onclick="revelarNumeros()">
+        </form>
+    </fieldset>
     
     <script>
         var numeros = []
+        var out = document.getElementById("idOut")
 
-        for (let i = 0; i < 7; i++) {
+        function revelarNumeros() {
+
+            for (let i = 0; i < 7; i++) {
             numeros.push(parseInt(Math.random() * 101))
             
         }
+        out.value = numeros
         console.log(numeros)
+        }
+
+       
     </script>
 </body>
 </html>
