@@ -37,10 +37,10 @@
 
             <h3>Converter para:</h3>
 
-            <input type="radio" id="idRealSaida" name="nmMoedaSaida" checked>
+            <input type="radio" id="idRealSaida" name="nmMoedaSaida">
             <label for="idRealSaida">Real</label><br>
 
-            <input type="radio" id="idDolarAmericanoSaida" name="nmMoedaSaida">
+            <input type="radio" id="idDolarAmericanoSaida" name="nmMoedaSaida" checked>
             <label for="idDolarAmericanoSaida">Dólar Americano</label><br>
 
             <input type="radio" id="idEuroSaida" name="nmMoedaSaida">
@@ -60,6 +60,175 @@
     <script>
 
         var out = document.getElementById("idOut")
+
+        function converter() {
+
+            let valor = Number(document.getElementById("idValor").value)
+
+            /* Variaveis de entrada */
+            let real = document.getElementById("idReal").checked
+            let dolarAmericano = document.getElementById("idDolarAmericano").checked
+            let euro = document.getElementById("idEuro").checked
+            let libraEsterlina = document.getElementById("idLibraEsterlina").checked
+            let dolarCanadense = document.getElementById("idDolarCanadense").checked
+
+            /* Variaveis de saida */
+            let realSaida = document.getElementById("idRealSaida"). checked
+            let dolarAmericanoSaida = document.getElementById("idDolarAmericanoSaida").checked
+            let euroSaida = document.getElementById("idEuroSaida").checked
+            let libraEsterlinaSaida = document.getElementById("idLibraEsterlinaSaida").checked
+            let dolarCanadenseSaida = document.getElementById("idDolarCanadenseSaida").checked
+
+            /* Real para real */
+            if (real && real) {
+                out.value = "Valor: " + " Em real " + valor
+            }
+
+            /* Real para dolar americano */
+            if (real && dolarAmericanoSaida) {
+                valor = valor * 0.21
+                out.value = "Valor: " + " Em dólar Americano " + valor
+            }
+
+            /* Real para euro */
+            if (real && euroSaida) {
+                valor = valor * 0.19
+                out.value = "Valor: " + " Em euro " + valor
+            }
+
+              /* Real para Libra esterlina */
+              if (real && libraEsterlinaSaida) {
+                valor = valor * 0.17
+                out.value = "Valor: " + " Em libra esterlina " + valor
+            }
+
+              /* Real para dólar canadense */
+              if (real && dolarCanadenseSaida) {
+                valor = valor * 0.26
+                out.value = "Valor: " + " Em dólar canadense " + valor
+            }
+
+              /* dólar americano para real */
+              if (dolarAmericano && realSaida) {
+                valor = valor * 4.82
+                out.value = "Valor: " + " Em real " + valor
+            }
+
+               /* dólar americano para dólar americano */
+               if (dolarAmericano && dolarAmericanoSaida) {
+                out.value = "Valor: " + " Em dólar americano " + valor
+            }
+
+               /* dólar americano para euro */
+               if (dolarAmericano && euroSaida) {
+                valor = valor * 0.94
+                out.value = "Valor: " + " Em euro " + valor
+            }
+
+               /* dólar americano para libra esterlina */
+               if (dolarAmericano && libraEsterlinaSaida) {
+                valor = valor * 0.80
+                out.value = "Valor: " + " Em libra esterlina " + valor
+            }
+
+               /* dólar americano para dólar canadense */
+               if (dolarAmericano && dolarCanadenseSaida) {
+                valor = valor * 1.27
+                out.value = "Valor: " + " Em dólar canadense " + valor
+            }
+
+               /* euro para real */
+               if (euro && realSaida) {
+                valor = valor * 5.13
+                out.value = "Valor: " + " Em real " + valor
+            }
+
+              /* euro para dólar americano */
+              if (euro && dolarAmericanoSaida) {
+                valor = valor * 1.07
+                out.value = "Valor: " + " Em dólar americano " + valor
+            }
+
+              /* euro para euro */
+              if (euro && euroSaida) {
+                valor = valor
+                out.value = "Valor: " + " Em euro " + valor
+            }
+
+              /* euro para libra esterlina */
+              if (euro && libraEsterlinaSaida) {
+                valor = valor * 0.85
+                out.value = "Valor: " + " Em libra esterlina " + valor
+            }
+
+              /* euro para dólar canadense */
+              if (euro && dolarCanadenseSaida) {
+                valor = valor * 1.25
+                out.value = "Valor: " + " Em dólar canadense " + valor
+            }
+
+              /* libra esterlina para real */
+              if (libraEsterlina && realSaida) {
+                valor = valor * 6.01
+                out.value = "Valor: " + " Em real " + valor
+            }
+
+              /* libra esterlina para dólar americano */
+              if (libraEsterlina && dolarAmericanoSaida) {
+                valor = valor * 1.25
+                out.value = "Valor: " + " Em dólar americano " + valor
+            }
+
+              /* libra esterlina para euro */
+              if (libraEsterlina && euroSaida) {
+                valor = valor * 1.17
+                out.value = "Valor: " + " Em euro " + valor
+            }
+
+              /* libra esterlina para libra esterlina */
+              if (libraEsterlina && libraEsterlinaSaida) {
+                valor = valor
+                out.value = "Valor: " + " Em libra esterlina " + valor
+            }
+
+              /* libra esterlina para dólar canadense */
+              if (libraEsterlina && dolarCanadenseSaida) {
+                valor = valor * 1.58
+                out.value = "Valor: " + " Em dólar canadense " + valor
+            }
+
+              /* dólar canadense para real */
+              if (dolarCanadense && realSaida) {
+                valor = valor * 3.80
+                out.value = "Valor: " + " Em real " + valor
+            }
+
+                 /* dólar canadense para dólar americano */
+                 if (dolarCanadense && dolarAmericanoSaida) {
+                valor = valor * 0.79
+                out.value = "Valor: " + " Em dólar americano " + valor
+            }
+
+                 /* dólar canadense para euro */
+                 if (dolarCanadense && euroSaida) {
+                valor = valor * 0.74
+                out.value = "Valor: " + " Em euro " + valor
+            }
+
+                 /* dólar canadense para libra esterlina */
+                 if (dolarCanadense && libraEsterlinaSaida) {
+                valor = valor * 0.63
+                out.value = "Valor: " + " Em libra esterlina " + valor
+            }
+
+                 /* dólar canadense para dólar canadense */
+                 if (dolarCanadense && dolarCanadenseSaida) {
+                valor = valor
+                out.value = "Valor: " + " Em dólar canadense " + valor
+            }
+
+           
+        }
     </script>
 </body>
 </html>
