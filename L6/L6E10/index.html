@@ -12,14 +12,13 @@
 
         <form action="">
 
-            <label for="idNumero">Digite um número</label><br>
+            <label for="idNumero">Digite um número de 0 a 15</label><br>
             <input type="number" id="idNumero" name="nmNumero">
             <br><br>
 
             <output id="idOut"></output>
             <br><br>
 
-            <input type="button" value="Gerar numeros" onclick="gerarNum()">
             <input type="button" value="Enviar" onclick="enviar()" >
 
         </form>
@@ -30,19 +29,25 @@
         var numeros = []
         var out = document.getElementById("idOut")
 
-        function gerarNum() {
-
         for (let i = 0; i < 30; i++) {
-        numeros.push(parseInt(Math.random() * 16))
+            numeros.push(gerarNum(15))
 
      }
-        console.log(numeros)
+            console.table(numeros)
+
+        function gerarNum(limite) {
+            let num = parseInt(Math.random() * limite)
+            return num
+        
     }
 
     function enviar() {
-        let numDigitado = Number (Document.getElementById("idNumero").value)
+        let numDigitado = Number (document.getElementById("idNumero").value)
 
-        if (numDigitado) {
+        for (let index = 0; index < numeros.length; index++) {
+            if (numeros[index] == numDigitado) {
+                out.value = out.value + index + " "
+            }
             
         }
     }
