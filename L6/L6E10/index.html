@@ -28,6 +28,7 @@
 
         var numeros = []
         var out = document.getElementById("idOut")
+        out.value = "Posições em que o número aparece: "
 
         for (let i = 0; i < 30; i++) {
             numeros.push(gerarNum(15))
@@ -46,7 +47,7 @@
 
         for (let index = 0; index < numeros.length; index++) {
             if (numeros[index] == numDigitado) {
-                out.value = out.value + index + " "
+                out.value = out.value + index + " - "
             }
             
         }
