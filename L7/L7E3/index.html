@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nome, sexo e salário</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Nome, sexo e salário</legend>
+
+        <form action="">
+
+            <label for="idNome">Nome</label><br>
+            <input type="text" id="idNome" name="nmNome" placeholder="Ex: .. Maria">
+            <br><br>
+
+            <input type="radio" id="idFem" name="nmSexo" checked>
+            <label for="idFem">Feminino</label><br>
+
+            <input type="radio" id="idMasc" name="nmSexo">
+            <label for="idMasc">Masculino</label>
+            <br><br>
+
+            <label for="idSalario">Salário</label><br>
+            <input type="number" id="idSalario" name="nmSalario" placeholder="Ex: .. 2500">
+            <br><br>
+
+            <output id="idOut">Mulheres que ganham acima de 5 mil:</output>
+            <br><br>
+
+            <input type="button" value="Enviar" onclick="envicarDados()">
+            <input type="button" value="Verificar menores de idade" onclick="mulheresSalario()">
+        </form>
+    </fieldset>
+</body>
+</html>
