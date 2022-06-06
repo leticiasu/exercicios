@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nome e Idade</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Nome e Idade</legend>
+
+        <form action="">
+
+            <label for="idNome">Nome</label><br>
+            <input type="text" id="idNome" name="nmNome" placeholder="Ex: .. Maria">
+            <br><br>
+
+            <label for="idIdade">Idade</label><br>
+            <input type="number" id="idIdade" name="nmIdade" placeholder="Ex: .. 18 ..">
+            <br><br>
+
+            <output id="idOut">Dados das pessoas menores de idade:</output>
+            <br><br>
+
+            <input type="button" value="Enviar" onclick="envicarDados()">
+            <input type="button" value="Verificar menores de idade" onclick="menoresIdade()">
+        </form>
+    </fieldset>
+</body>
+</html>
