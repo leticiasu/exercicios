@@ -32,6 +32,8 @@
         var numeros = []
         var out = document.getElementById("idOut")
         var outItens = document.getElementById("idOutItens")
+        out.value = "Números digitados: "
+        outItens.value = "Posições dos multiplos de 10: "
 
         function enviarNum() {
             let numero = Number (document.getElementById("idNumero").value)
@@ -41,6 +43,8 @@
         }
 
         function relatorio() {
+
+            console.table(numeros)
 
             for (let i = 0; i < numeros.length; i++) {
                 out.value = out.value + " " + numeros [i]
