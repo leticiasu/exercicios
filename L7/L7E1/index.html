@@ -4,9 +4,100 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Notas</title>
 </head>
 <body>
+    <fieldset>
+        <legend>Notas</legend>
+    
+        <form action="">
+
+            <label for="idNota">Notas</label><br>
+            <input type="number" id="idNota" step="0.01" name="nmNotas">
+            <br><br>
+
+            <input type="button" value="Icluir Nota" onclick="incluirNota()">
+
+            <input type="button" value="Média" onclick="media()">
+
+            <input type="button" value="Alunos acima da média" onclick="alunosAcimaMedia()">
+
+            <input type="button" value="Maior nota digitada" onclick="maiorNota()">
+
+            <input type="button" value="Posição da maior nota" onclick="posicaoMaiorNota()">
+            <br><br>
+
+            <output id="idOutMed"></output><br>
+            <output id="idOutAlAc"></output><br>
+            <output id="idOutMaiNo"></output><br>
+            <output id="idOutPosiMaNot"></output>
+        </form>
+    </fieldset>
+
+    <script>
+        var notas = []
+
+        function incluirNota() {
+            notas.push(Number(document.getElementById("idNota").value))
+            document.getElementById("idNota").value = ""
+        }
+
+        // média da turma
+
+        function media() {
+            let saida = document.getElementById("idOutMed")
+
+            let media = (notas.reduce(function(acumulador, elemento, index, array){
+                return  acumulador = acumulador + elemento
+            }, 0)) / notas.length
+        
+            saida.value = saida.value + media
+
+        }
+
+        // Alunos acima da média
+        function alunosAcimaMedia() {
+            let saida = document.getElementById("idOutAlAc")
+
+            
+
+        }
+
+        //A maior nota 
+        function maiorNota() {
+            let saida = document.getElementById("idOutMaiNo")
+            let maior = 0
+
+            notas.forEach(element => {
+                if (element > maior) {
+                    maior = element
+                }
+            });
+
+            saida.value = "A Maior nota é: " + maior
+
+            return maior 
+        }
+
+        //Posição da maior nota
+        function posicaoMaiorNota() {
+            let saida = document.getElementById("idOutPosiMaNot")
+
+            let indMaiorNota = notas.map(function(value, index, array) {
+                if (value == 7) {
+                    return index
+                }
+            })
+
+            indMaiorNota = indMaiorNota.filter(function(value, index, array) {
+                return value != undefined
+            })
+
+            console.log(indMaiorNota);
+
+        }
+       
+    </script>
     
 </body>
 </html>
