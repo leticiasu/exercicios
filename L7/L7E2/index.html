@@ -12,20 +12,68 @@
 
         <form action="">
 
-            <label for="idNome">Nome</label><br>
-            <input type="text" id="idNome" name="nmNome" placeholder="Ex: .. Maria">
-            <br><br>
+            <div>
 
-            <label for="idIdade">Idade</label><br>
-            <input type="number" id="idIdade" name="nmIdade" placeholder="Ex: .. 18 ..">
-            <br><br>
+                <label for="idNome">Nome</label><br>
+                <input type="text" id="idNome" name="nmNome" placeholder="Ex: .. Maria">
 
-            <output id="idOut">Dados das pessoas menores de idade:</output>
-            <br><br>
+            </div>
 
-            <input type="button" value="Enviar" onclick="envicarDados()">
-            <input type="button" value="Verificar menores de idade" onclick="menoresIdade()">
+            <div>
+
+                <label for="idIdade">Idade</label><br>
+                <input type="number" id="idIdade" name="nmIdade" placeholder="Ex: .. 18 ..">
+
+            </div>
+            <div>
+
+                <output id="idOut">Dados das pessoas menores de idade:</output>
+
+            </div>
+            <div>
+
+                <input type="button" value="Enviar" onclick="Enviar()">
+                <input type="button" value="Verificar menores de idade"  onclick="menoresIdade()">
+
+            </div>
         </form>
     </fieldset>
+
+    <script>
+
+       /* var btEnviar = document.getElementById("idBtEnviar")
+        var btMenorIdades = document.getElementById("idBtMenorIdades")
+        var out = document.getElementById("idOut")*/
+
+        var nomes = []
+        var idades = []
+
+        btEnviar.onclick = function () {
+            let nome = document.getElementById("idNome").value
+            let idade = Number(document.getElementById("idIdade").value)
+
+            if (nome == " " || nome == "") {
+                out.value = "Preenchimento obrigatório!"
+                document.getElementById("idNome").focus ()
+            }
+
+            if (idade < 0 || idade > 130 || idade == "" || idade == " ") {
+                out.value = "Idade inválida"
+                document.getElementById("idIdade").focus ()
+            }
+
+            nomes.push(nome)
+            idades.push(idade)
+
+            console.log(nomes);
+            console.log(idades);
+
+            document.getElementById("idNome").value = ""
+            document.getElementById("idIdade").value = ""
+        }
+
+
+
+    </script>
 </body>
 </html>
