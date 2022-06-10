@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Calculadora</legend>
+        <form action="">
+
+            <div class="Tela">
+                <input type="number" id="idTela" name="nmTela" step="0.01">
+            </div>
+
+            <div class="Linha1">
+                <input type="button" value="√">
+                <input type="button" value="⌫" onclick="apagar()">
+                <input type="button" value="%">
+                <input type="button" value="/">
+            </div>
+
+            <div class="Linha2">
+                <input type="button" value="7" onclick="num7()">
+                <input type="button" value="8" onclick="num8()">
+                <input type="button" value="9" onclick="num9()">
+                <input type="button" value="X">
+            </div>
+
+            <div class="Linha3">
+                <input type="button" value="4" onclick="num4()">
+                <input type="button" value="5" onclick="num5()">
+                <input type="button" value="6" onclick="num6()">
+                <input type="button" value="-">
+            </div>
+
+            <div class="Linha4">
+                <input type="button" value="1" onclick="num1()">
+                <input type="button" value="2" onclick="num2()">
+                <input type="button" value="3" onclick="num3()">
+                <input type="button" value="+" onclick="somar()">
+            </div>
+
+            <div class="Linha5">
+                <input type="button" value="0" onclick="num0()">
+                <input type="button" value=".">
+                <input type="button" value="=" onclick="igual()">
+            </div>
+
+
+        </form>
+    </fieldset>
+
+    <script>
+
+        var tela = document.getElementById("idTela")
+        var numAux = Number (tela.value)
+        
+        function num1() {
+            tela.value = tela.value + "1"
+        }
+
+        function num2() { 
+            tela.value = tela.value + "2"
+        }
+
+        function num3() {
+            tela.value = tela.value + "3"
+        }
+
+        function num4() { 
+            tela.value = tela.value + "4"
+        }
+
+        function num5() { 
+            tela.value = tela.value + "5"
+        }
+
+        function num6() { 
+            tela.value = tela.value + "6"
+        }
+
+        function num7() {
+            tela.value = tela.value + "7"
+        }
+
+        function num8() {
+            tela.value = tela.value + "8"
+        }
+
+        function num9() {
+            tela.value = tela.value + "9"
+        }
+
+        function num0() {
+            tela.value = tela.value + "0"
+        }
+
+        function apagar() {
+            tela.value = ""
+        }
+
+       /* function somar() {
+            let algarismo = Number(document.getElementById("idTela").value)
+            let aux = ""
+
+                aux = aux + algarismo
+                algarismo = ""
+                tela.value = ""
+                console.log(algarismo);
+                console.log(aux);
+                var soma = aux
+        }*/
+        function somar() {
+            let aux = Number (tela.value)
+            let operacao
+           
+            console.log(aux)
+            tela.value = ""
+            
+            operacao = aux + tela.value
+            console.log(operacao)
+        }
+
+        function igual() {
+         
+        }
+
+    </script>
+</body>
+</html>
