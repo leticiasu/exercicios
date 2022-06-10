@@ -41,25 +41,25 @@
 
     <script>
 
-       /* var btEnviar = document.getElementById("idBtEnviar")
-        var btMenorIdades = document.getElementById("idBtMenorIdades")
-        var out = document.getElementById("idOut")*/
 
         var nomes = []
         var idades = []
+        var menoresDeIdade = []
+        var nomesMenorDeIdade = []
 
-        btEnviar.onclick = function () {
+        var saida = document.getElementById("idOut")
+
+        function Enviar() {
             let nome = document.getElementById("idNome").value
-            let idade = Number(document.getElementById("idIdade").value)
+            let idade = document.getElementById("idIdade").value
 
             if (nome == " " || nome == "") {
-                out.value = "Preenchimento obrigatório!"
+                saida.value = "Preenchimento obrigatório!"
                 document.getElementById("idNome").focus ()
             }
 
             if (idade < 0 || idade > 130 || idade == "" || idade == " ") {
-                out.value = "Idade inválida"
-                document.getElementById("idIdade").focus ()
+                saida.value = "Idade inválida"
             }
 
             nomes.push(nome)
@@ -70,6 +70,20 @@
 
             document.getElementById("idNome").value = ""
             document.getElementById("idIdade").value = ""
+        }
+
+        function menoresIdade() {
+            idades.forEach((idade, index) => {
+                if (idade < 18) {
+                    menoresDeIdade.push(index)
+                }
+            });
+
+            menoresDeIdade.forEach(indMenorIdade => {
+                nomesMenorDeIdade.push(nomes[indMenorIdade])
+            })
+
+            saida.value = "Menores de Idade: " + nomesMenorDeIdade.toString()
         }
 
 
