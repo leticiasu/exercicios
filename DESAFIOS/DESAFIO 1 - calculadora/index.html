@@ -56,7 +56,7 @@
     <script>
 
         var tela = document.getElementById("idTela")
-        var numAux = Number (tela.value)
+        
         
         function num1() {
             tela.value = tela.value + "1"
@@ -112,16 +112,30 @@
                 console.log(algarismo);
                 console.log(aux);
                 var soma = aux
+
+
+                digita um valor na tela aperta em soma o valor vai pra variavel aux, limpa a tela 
+                digita em novo valor que soma com o valor da aux
+                ele esquece o numero que digitei e substitui tudo e o n2 fica vazio
+
+                tela :3
+                aux : 2 
+
+                aux + tela = 5
         }*/
         function somar() {
-            let aux = Number (tela.value)
-            let operacao
-           
-            console.log(aux)
-            tela.value = ""
+
+            var numAux = Number(tela.value)
             
-            operacao = aux + tela.value
-            console.log(operacao)
+            let resul
+            tela.value = ""
+            let n2 = Number(tela.value)
+            resul = numAux + n2
+
+            console.log("auxiliar " + numAux);
+            console.log("n2 " + n2);
+            console.log("resultado " + resul);
+
         }
 
         function igual() {
