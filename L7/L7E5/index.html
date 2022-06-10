@@ -19,11 +19,72 @@
             <output id="idOut"></output>
             <br><br>
 
-            <input type="button" value="Enviar" onclick="enviarNum()">
-            <input type="button" value="Ordem Crescente" onclick="crescente()">
-            <input type="button" value="Ordem Decrescente" onclick="decrescente()">
+            <input type="button" id="idEnviar" value="Enviar">
+            <input type="button" id="idCrescente" value="Ordem Crescente">
+            <input type="button" id="idDecrescente" value="Ordem Decrescente">
         </form>
     </fieldset>
+    
+    <script>
+
+        var numeros = []
+
+        var btEnviar = document.getElementById("idEnviar")
+        var btCrescente = document.getElementById("idCrescente")
+        var btDecrescente = document.getElementById("idDecrescente")
+
+        var out = document.getElementById("idOut")
+
+        btEnviar.onclick = function () {
+            numeros.push(Number(document.getElementById("idNum").value))
+            document.getElementById("idNum").value = ""
+            console.log(numeros);
+        }
+
+        btCrescente.onclick = function(){
+            out.value =  "Ordem Crescente: " + bubbleSortCres(numeros).toString()
+        }
+
+        btDecrescente.onclick = function(){
+            out.value =  "Ordem Decrescente: " + bubbleSortDecres(numeros).toString()
+        }
+
+        function bubbleSortCres(numeros) {
+            let isTrocou = true
+            while (isTrocou) {
+                isTrocou = false
+    
+                for (i = 0; i < numeros.length; i++) {
+                    if (numeros[i] > numeros[i + 1]) {
+                        isTrocou = true
+                        let aux = numeros[i]
+                        numeros[i] = numeros[i + 1]
+                        numeros[i + 1] = aux
+                    }
+                }
+            }   
+            return numeros
+        }
+
+        function bubbleSortDecres(numeros) {
+            let isTrocou = true
+            while (isTrocou) {
+                isTrocou = false
+    
+                for (i = 0; i < numeros.length; i++) {
+                    if (numeros[i] < numeros[i + 1]) {
+                        isTrocou = true
+                        let aux = numeros[i]
+                        numeros[i] = numeros[i + 1]
+                        numeros[i + 1] = aux
+                    }
+                }
+            } 
+            return numeros  
+        }
+
+
+    </script>
     
 </body>
 </html>
