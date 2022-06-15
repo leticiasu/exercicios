@@ -16,10 +16,10 @@
             </div>
 
             <div class="Linha1">
-                <input type="button" value="√">
-                <input type="button" value="⌫" onclick="apagar()">
-                <input type="button" value="%">
-                <input type="button" value="/">
+                <input type="button" id="idRaizQuadrada" value="√">
+                <input type="button" id="idApagar" value="⌫" onclick="apagar()">
+                <input type="button" id="idPorcentagem" value="%">
+                <input type="button" id="idDividir" value="/">
             </div>
 
             <div class="Linha2">
@@ -54,10 +54,10 @@
     </fieldset>
 
     <script>
-
+        //capturar tela
         var tela = document.getElementById("idTela")
         
-        
+        //capturar botões numéricos
         function num1() {
             tela.value = tela.value + "1"
         }
@@ -98,49 +98,10 @@
             tela.value = tela.value + "0"
         }
 
-        function apagar() {
-            tela.value = ""
-        }
-
-       /* function somar() {
-            let algarismo = Number(document.getElementById("idTela").value)
-            let aux = ""
-
-                aux = aux + algarismo
-                algarismo = ""
-                tela.value = ""
-                console.log(algarismo);
-                console.log(aux);
-                var soma = aux
+        //capturar botões linha 1
+        var btRaiz = document.getElementById("idRaizQuadrada")
 
 
-                digita um valor na tela aperta em soma o valor vai pra variavel aux, limpa a tela 
-                digita em novo valor que soma com o valor da aux
-                ele esquece o numero que digitei e substitui tudo e o n2 fica vazio
-
-                tela :3
-                aux : 2 
-
-                aux + tela = 5
-        }*/
-        function somar() {
-
-            var numAux = Number(tela.value)
-            
-            let resul
-            tela.value = ""
-            let n2 = Number(tela.value)
-            resul = numAux + n2
-
-            console.log("auxiliar " + numAux);
-            console.log("n2 " + n2);
-            console.log("resultado " + resul);
-
-        }
-
-        function igual() {
-         
-        }
 
     </script>
 </body>
