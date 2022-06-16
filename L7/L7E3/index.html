@@ -8,7 +8,7 @@
 </head>
 <body>
     <fieldset>
-        <legend>Nome, sexo e salário</legend>
+        <legend>Cadastro</legend>
 
         <form action="">
 
@@ -30,13 +30,69 @@
             <output id="idOut">Mulheres que ganham acima de 5 mil:</output>
             <br><br>
 
-            <input type="button" value="Enviar" onclick="envicarDados()">
-            <input type="button" value="Verificar menores de idade" onclick="mulheresSalario()">
+            <input type="button" id="idEnviar" value="Enviar">
+            <input type="button" id="idVerificar" value="Verificar">
         </form>
     </fieldset>
 
     <script>
         
+        //variaveis globais
+            var nomes = []
+            var salarios = []
+            var sexos = []
+            const salarioMinimo = 1200
+            var btEnviar
+            var btVerificar
+            var out
+
+        inicializar ()
+
+            btEnviar.onclick = function () {
+                let isTelaValida = consistirTela ()
+
+                if (isTelaValida) {
+                    enviar ()
+                    limparTela ()
+                }
+            }
+
+            btVerificar.onclick = function () {
+                //lista com todos os salarios maiores que 5000
+                let salariosFiltrados = filtrarSalariosMaiorQue(5000)
+
+                //Verificar se o dono do salário é feminino, se for, adiciona na saída
+                out.value = "Mulheres com sálario acima de R$5000,00: "
+                salariosFiltrados.forEach(element => {
+                    if (sexos[element] == "F") {
+                        out.value = out.value + "( " + nomes[element] + "; " + sexos[element] + "; " + salarios[element] + ")"
+
+                    }
+                })
+            }
+        //Rotina de Inicialização
+
+        function inicializar() {
+            btEnviar = document.getElementById("idEnviar")
+            btVerificar = document.getElementById("idVerificar")
+            out = document.getElementById("idOut")
+            limparTela()
+        }
+
+        //Rotina de Consistência dos campos de entrada
+        function consistirTela() {
+            let nome = document.getElementById("idNome").value
+            let salario = document.getElementById("idSalario").value
+
+            //consistência do campo nome
+            if (nome == "" || nome == " ") {
+                out.value = "Campo Nome, preenchimento obrigatório"
+                out.classList.add("alerta")
+                document.getElementById("idNome").focus()
+                return false
+            }
+        }
+
         
 
     </script>
